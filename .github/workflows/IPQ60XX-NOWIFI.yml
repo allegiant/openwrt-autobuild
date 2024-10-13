@@ -1,9 +1,16 @@
 name: IPQ60XX-NOWIFI
-
 on:
+  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 19 * * *
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+# on:
+#  workflow_dispatch:
+# schedule:
+#    - cron: 0 19 * * *
 
 env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
